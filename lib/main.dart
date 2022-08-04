@@ -17,12 +17,24 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
+// di di myapp
+  // @override
+  // Widget build(BuildContext context) {
+  //   return BlocProvider(
+  //     create: (context) => CounterBloc(),
+  //     child: MaterialApp(
+  //       home: DependencyInjectionPage(),
+  //     ),
+  //   );
+  // }
+
+  // di di scaffold
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => CounterBloc(),
-      child: MaterialApp(
-        home: DependencyInjectionPage(),
+    return MaterialApp(
+      home: BlocProvider(
+        create: (context) => CounterBloc(),
+        child: DependencyInjectionPage(),
       ),
     );
   }
