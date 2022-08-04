@@ -7,6 +7,7 @@ import 'package:mhybloc/views/bloc_builder_page.dart';
 import 'package:mhybloc/views/bloc_listener_page.dart';
 import 'package:mhybloc/views/bloc_consumer_page.dart';
 import 'package:mhybloc/views/bloc_provider_page.dart';
+import 'package:mhybloc/views/dependency_injection_page.dart';
 import 'package:mhybloc/views/homepage.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       create: (context) => CounterBloc(),
       child: MaterialApp(
-        home: BlocProviderPage(),
+        home: DependencyInjectionPage(),
       ),
     );
   }
