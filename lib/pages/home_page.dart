@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mhybloc/blocs/counter.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mhybloc/blocs/theme.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -8,6 +9,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     CounterBloc mycounter = context.read<CounterBloc>();
+    ThemeBloc mytheme = context.read<ThemeBloc>();
     return Scaffold(
       appBar: AppBar(
         title: const Text("Home Page"),
@@ -41,6 +43,12 @@ class HomePage extends StatelessWidget {
             )
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          mytheme.changeTheme();
+        },
+        child: const Icon(Icons.settings),
       ),
     );
   }
