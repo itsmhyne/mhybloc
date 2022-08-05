@@ -24,18 +24,15 @@ class DependencyInjectionPage extends StatelessWidget {
           //   builder: (context) => const OtherPage(),
           // ));
           // jika di di scaffold
-          Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) => BlocProvider.value(
-                    value: myCounter,
-                    child: const OtherPage(),
-                  )
-
-              // tidak disarankan
-              // BlocProvider(
-              //   create: (context) => myCounter,
-              //   child: const OtherPage(),
-              // ),
-              ));
+          // (anonymous routeaccess)
+          // Navigator.of(context).push(MaterialPageRoute(
+          //   builder: (context) => BlocProvider.value(
+          //     value: myCounter,
+          //     child: const OtherPage(),
+          //   ),
+          // ));
+          // (named route access)
+          Navigator.of(context).pushNamed("/other");
         },
         child: const Icon(Icons.arrow_forward_ios),
       ),

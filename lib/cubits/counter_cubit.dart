@@ -27,7 +27,6 @@ class CounterCubit extends Cubit<int> {
 
   @override
   void onError(Object error, StackTrace stackTrace) {
-    print(error);
     super.onError(error, stackTrace);
   }
 }
