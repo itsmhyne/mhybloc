@@ -10,14 +10,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // CounterBloc mycounter = context.read<CounterBloc>(); //hanya pertama kali
-    // CounterBloc mycounter = context.watch<CounterBloc>(); //berkali" ketika bloc berubah
-    // String nameUser = context.select<UserBloc, String>(
-    //   (value) => value.state["name"],
-    // ); //berkali" ketika bloc berubah
-    // int ageUser = context.select<UserBloc, int>(
-    //   (value) => value.state["age"],
-    // ); //berkali" ketika bloc berubah
     return Scaffold(
       appBar: AppBar(
         title: const Text("Extensions Method"),
@@ -38,13 +30,6 @@ class HomePage extends StatelessWidget {
               ); //berkali" ketika bloc berubah
               return Text("Umur : ${ageUser} tahun");
             }),
-            // Builder(builder: (context) {
-            //   CounterBloc mycounter = context.watch<CounterBloc>();
-            //   return Text(
-            //     "${mycounter.state}",
-            //     style: const TextStyle(fontSize: 50),
-            //   );
-            // }),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
