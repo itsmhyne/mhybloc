@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import './event/counterevent';
+import 'package:mhybloc/bloc/event/counterevent.dart';
 
 // cubit
 // class CounterBloc extends Cubit<int> {
@@ -17,5 +17,21 @@ class CounterBloc extends Bloc<CounterEvent, int> {
           else
             {emit(state + 1)}
         });
+  }
+
+  @override
+  void onChange(change) {
+    print(change);
+  }
+
+  @override
+  void onError(err, trace) {
+    print(err);
+    print(trace);
+  }
+
+  @override
+  void onTransition(transition) {
+    print(transition);
   }
 }

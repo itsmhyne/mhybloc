@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mhybloc/bloc/counterbloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mhybloc/bloc/event/counterevent';
+import 'package:mhybloc/bloc/event/counterevent.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
