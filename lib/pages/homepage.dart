@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mhybloc/bloc/counterbloc.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:mhybloc/bloc/event/counterevent.dart';
+import 'package:mhybloc/bloc/counter.dart';
+import 'package:mhybloc/bloc/counter_event.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -22,7 +22,7 @@ class HomePage extends StatelessWidget {
               bloc: counterB,
               builder: (context, state) {
                 return Text(
-                  "$state",
+                  "${state}",
                   style: const TextStyle(fontSize: 50),
                 );
               },
@@ -35,12 +35,12 @@ class HomePage extends StatelessWidget {
               children: [
                 IconButton(
                     onPressed: () {
-                      counterB.add(CounterEvent.decrement);
+                      counterB.add(CounterEventIncrement());
                     },
                     icon: const Icon(Icons.remove)),
                 IconButton(
                     onPressed: () {
-                      counterB.add(CounterEvent.increment);
+                      counterB.add(CounterEventDecrement(context));
                     },
                     icon: const Icon(Icons.add)),
               ],
