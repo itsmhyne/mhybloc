@@ -1,18 +1,9 @@
-import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mhybloc/app.dart';
+import 'package:mhybloc/general_observer.dart';
 import 'package:flutter/material.dart';
-import 'package:mhybloc/bloc/observer.dart';
-import 'package:mhybloc/pages/homepage.dart';
 
 void main() {
-  Bloc.observer = MyBlocObserver();
+  Bloc.observer = GeneralObserver();
   runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(home: HomePage());
-  }
 }
