@@ -1,13 +1,25 @@
 import 'package:flutter/material.dart';
-import 'package:mhybloc/pages/counter/view/counter_page.dart';
+import 'package:mhybloc/pages/home/home.dart';
+import './bloc/export.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class App extends StatelessWidget {
+  const App({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MultiBlocProvider(
+        providers: [BlocProvider(create: (context) => UserBloc())],
+        child: AppView());
+  }
+}
+
+class AppView extends StatelessWidget {
+  const AppView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: CounterPage(),
+      home: HomePage(),
     );
   }
 }
