@@ -39,15 +39,18 @@ class HomePage extends StatelessWidget {
                     style: TextStyle(fontSize: 12),
                   ),
                   trailing: IconButton(
-                      onPressed: () {}, icon: const Icon(Icons.delete)),
+                      onPressed: () {
+                        userBloc.add(DeleteUserEvent(userModel));
+                      },
+                      icon: const Icon(Icons.delete)),
                 );
               });
         },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(context,
-              MaterialPageRoute(builder: ((context) => const AddPage())));
+          Navigator.push(
+              context, MaterialPageRoute(builder: ((context) => AddPage())));
         },
         child: Icon(Icons.add_reaction),
       ),
