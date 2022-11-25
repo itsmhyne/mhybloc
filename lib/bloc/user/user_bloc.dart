@@ -17,6 +17,20 @@ class UserBloc extends Bloc<UserEvent, UserState> {
         emit(UserError(state.allUsers));
       }
     });
+    // edit user
+    on<EditUserEvent>((event, emit) {
+      try {
+        emit(UserLoading(state.allUsers));
+        UserModel selectedUser = state.allUsers
+            .where((element) => element.id == event.userModel.id)
+            .first;
+        selectedUser.name = event.userModel.name;
+        selectedUser.age = event.userModel.age;
+        emit(UserComplete(state.allUsers));
+      } catch (e) {
+        emit(UserError(state.allUsers));
+      }
+    });
     //del user
     on<DeleteUserEvent>((event, emit) {
       try {

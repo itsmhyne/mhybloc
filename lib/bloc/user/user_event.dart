@@ -20,3 +20,10 @@ class DeleteUserEvent extends UserEvent {
 
   final UserModel userModel;
 }
+
+class EditUserEvent extends UserEvent {
+  // constructor
+  EditUserEvent(this.userModel);
+
+  final UserModel userModel;
+}

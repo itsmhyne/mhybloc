@@ -28,7 +28,7 @@ class HomePage extends StatelessWidget {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: ((context) => const EditPage())));
+                            builder: ((context) => EditPage(userModel))));
                   },
                   leading: CircleAvatar(
                     child: Text("${index + 1}"),
